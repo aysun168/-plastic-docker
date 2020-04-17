@@ -21,12 +21,12 @@
     <Mode>bridge</Mode>
      <Publish>
       <Port>
-        <HostPort></HostPort>
+        <HostPort>8087</HostPort>
         <ContainerPort>8087</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
 	  <Port>
-        <HostPort></HostPort>
+        <HostPort>7178</HostPort>
         <ContainerPort>7178</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -34,17 +34,17 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/user/appdata/plastic-scm/conf</HostDir>
       <ContainerDir>/conf</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/user/appdata/plastic-scm/logs</HostDir>
       <ContainerDir>/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
 	   <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/user/appdata/plastic-scm/jet</HostDir>
       <ContainerDir>/db/jet</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
