@@ -30,7 +30,7 @@ RUN echo "deb https://www.plasticscm.com/plasticrepo/stable/debian/ ./" >> /etc/
 RUN DEBIAN_FRONTEND=noninteractive wget -q https://www.plasticscm.com/plasticrepo/stable/debian/Release.key -O - | sudo apt-key add -
 
 
-RUN DEBIAN_FRONTEND=noninteractive sudo apt-get -q update && sudo apt-get install -y -q plasticscm-server-core && plasticsd stop
+RUN DEBIAN_FRONTEND=noninteractive sudo apt-get -q update && sudo apt-get install -y -q plasticscm-complete && plasticsd stop
 
 
 RUN { clconfigureserver --language=en --port=8087 --workingmode=UPWorkingMode; [ -f /opt/plasticscm5/server/users.conf ] && mv /opt/plasticscm5/server/users.conf /conf || touch /conf/users.conf; [ -f /opt/plasticscm5/server/groups.conf ] && mv /opt/plasticscm5/server/groups.conf /conf || touch /conf/groups.conf; mv /opt/plasticscm5/server/plasticd.lic /conf; ln -s /conf/users.conf /opt/plasticscm5/server && ln -s /conf/groups.conf /opt/plasticscm5/server; ln -s /conf/plasticd.lic /opt/plasticscm5/server; }
